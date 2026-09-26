@@ -1,20 +1,24 @@
 @extends('layouts.app')
 
-@section('title', 'Login')
+@section('title', 'Login - Student Management System')
 
 @section('content')
 <div class="row justify-content-center py-4">
-    <div class="col-md-6 col-lg-5">
-        <div class="app-card border-0 shadow-sm">
-            <div class="p-4 p-md-5">
+    <div class="col-md-6 col-lg-5 col-xl-4">
+        <div class="app-card mb-3">
+            <div class="p-4 p-sm-5">
+                <!-- Branding Header matching Page 4 -->
                 <div class="text-center mb-4">
-                    <h2 class="fw-bold text-dark mb-1">Login Form</h2>
-                    <p class="text-muted small">Please enter your credentials to access the system</p>
+                    <div class="brand-icon-box mx-auto mb-3" style="width: 44px; height: 44px; font-size: 1.15rem;">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h2 class="h4 fw-bold text-dark mb-1 tracking-tight">Login Form</h2>
+                    <p class="text-muted small mb-0">Please enter your credentials to access the system</p>
                 </div>
 
                 @if($errors->any())
-                    <div class="alert alert-danger py-2 px-3 small rounded-3 mb-3">
-                        <ul class="mb-0 ps-3">
+                    <div class="alert-minimal alert-minimal-danger mb-4">
+                        <ul class="mb-0 ps-3 small text-danger">
                             @foreach($errors->all() as $error)
                                 <li>{{ $error }}</li>
                             @endforeach
@@ -27,7 +31,7 @@
 
                     <!-- Email Address -->
                     <div class="mb-3">
-                        <label for="email" class="form-label text-secondary fw-semibold small">Email address</label>
+                        <label for="email" class="form-label">Email address</label>
                         <input
                             type="email"
                             class="form-control @error('email') is-invalid @enderror"
@@ -41,38 +45,40 @@
                     </div>
 
                     <!-- Password -->
-                    <div class="mb-4">
-                        <label for="password" class="form-label text-secondary fw-semibold small">Password</label>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <label for="password" class="form-label mb-0">Password</label>
+                        </div>
                         <input
                             type="password"
                             class="form-control @error('password') is-invalid @enderror"
                             id="password"
                             name="password"
                             value="password"
-                            placeholder="•••••"
+                            placeholder="••••••••"
                             required
                         >
                     </div>
 
-                    <!-- Remember me & Submit -->
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="remember" name="remember" checked>
-                            <label class="form-check-label small text-secondary" for="remember">
-                                Remember me
-                            </label>
-                        </div>
+                    <!-- Remember me -->
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="remember" name="remember" checked>
+                        <label class="form-check-label text-muted small" for="remember">
+                            Remember my login on this device
+                        </label>
                     </div>
 
-                    <button type="submit" class="btn btn-primary w-100 py-2 fs-6">
-                        Login
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary w-100 py-2">
+                        <span>Login</span>
+                        <i class="fa-solid fa-arrow-right fs-6"></i>
                     </button>
                 </form>
 
                 <div class="mt-4 pt-3 border-top text-center">
                     <p class="text-muted small mb-0">
                         Don't have an account yet?
-                        <a href="{{ route('register') }}" class="text-primary fw-semibold text-decoration-none">
+                        <a href="{{ route('register') }}" class="text-dark fw-semibold text-decoration-underline ms-1">
                             Register Form
                         </a>
                     </p>
@@ -80,13 +86,13 @@
             </div>
         </div>
 
-        <!-- Quick Credentials Hint for Examiner -->
-        <div class="card mt-3 border-0 bg-white shadow-sm p-3 rounded-3 text-center">
-            <small class="text-muted">
+        <!-- Examiner Quick Credentials Hint Card -->
+        <div class="app-card p-3 text-center bg-white">
+            <div class="text-muted small" style="font-size: 0.78rem;">
                 <i class="fa-solid fa-key text-warning me-1"></i>
                 <strong>Default Credentials:</strong>
-                <code>adminwoman@gmail.com</code> &bull; Password: <code>password</code>
-            </small>
+                <code class="text-dark bg-light px-1 py-0.5 rounded border ms-1">adminwoman@gmail.com</code> &bull; Password: <code class="text-dark bg-light px-1 py-0.5 rounded border">password</code>
+            </div>
         </div>
     </div>
 </div>
