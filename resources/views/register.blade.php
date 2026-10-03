@@ -9,9 +9,7 @@
             <div class="p-4 p-sm-5">
                 <!-- Branding Header matching Page 5 -->
                 <div class="text-center mb-4">
-                    <div class="brand-icon-box mx-auto mb-3" style="width: 44px; height: 44px; font-size: 1.15rem;">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </div>
+                    <img src="{{ asset('LOGO-SETEC.ico') }}" alt="SETEC Logo" class="mx-auto mb-3 d-block" style="width: 56px; height: 56px; object-fit: contain;">
                     <h2 class="h4 fw-bold text-dark mb-1 tracking-tight">Register Form</h2>
                     <p class="text-muted small mb-0">Create an account to manage the student database</p>
                 </div>

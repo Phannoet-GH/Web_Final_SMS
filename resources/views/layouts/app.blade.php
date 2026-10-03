@@ -6,6 +6,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Student Management System') - Laravel Project Exam</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('LOGO-SETEC.ico') }}">
+
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,6 +88,14 @@
 
         .navbar-brand-minimal:hover {
             color: var(--primary-hover);
+        }
+
+        .brand-logo-img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            display: inline-block;
+            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
         }
 
         .brand-icon-box {
@@ -597,9 +608,7 @@
     <nav class="navbar navbar-expand-lg navbar-minimal sticky-top">
         <div class="container">
             <a class="navbar-brand-minimal" href="{{ route('students.index') }}">
-                <div class="brand-icon-box">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div>
+                <img src="{{ asset('LOGO-SETEC.ico') }}" alt="SETEC Logo" class="brand-logo-img">
                 <span>SETEC SMS</span>
                 <span class="brand-badge ms-1">Laravel 13</span>
             </a>
@@ -705,7 +714,8 @@
     <!-- Minimalist Footer -->
     <footer>
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-            <div>
+            <div class="d-flex align-items-center gap-2">
+                <img src="{{ asset('LOGO-SETEC.ico') }}" alt="SETEC Logo" style="width: 20px; height: 20px; object-fit: contain;">
                 <span class="fw-semibold text-dark">SETEC SMS</span>
                 <span class="mx-1">&bull;</span>
                 <span>Final Exam Web Project (Laravel 13)</span>
